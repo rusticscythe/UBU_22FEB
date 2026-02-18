@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrepreneurial Mindset for Engineers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500;700&family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 1. THE SETUP */
+        * { box-sizing: border-box; }
+        p { margin: 0; margin-bottom: 15px; }
+        body {
+            background-color: #0f172a;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+            margin: 0;
+            min-height: 100vh;
+            padding: 20px 0;
+            place-items: center;
+        }
+
+        .slide-container {
+            align-items: center;
+            background-color: #0f172a;
+            border-radius: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Sarabun', sans-serif;
+            height: 720px;
+            justify-content: center;
+            overflow: hidden;
+            padding: 60px;
+            position: relative;
+            width: 1280px;
+            color: #f8fafc;
+        }
+
+        /* Abstract Background Decoration */
+        .slide-container::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .slide-container::after {
+            content: '';
+            position: absolute;
+            bottom: -5%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(244, 114, 182, 0.05) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .slide-container > * { position: relative; z-index: 1; }
+
+        /* 2. TYPOGRAPHY */
+        h1, h2, h3 {
+            color: #f8fafc;
+            font-weight: 700;
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+        }
+        h1 { font-size: 72px; line-height: 1.1; margin-bottom: 20px; }
+        .slide-title {
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: left;
+            width: 100%;
+            border-left: 8px solid #38bdf8;
+            padding-left: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .subtitle { font-size: 24px; color: #94a3b8; font-weight: 400; max-width: 900px; text-align: center; }
+        p, li { font-size: 20px; line-height: 1.6; color: #cbd5e1; }
+        
+        .keyword { color: #38bdf8; font-weight: 700; }
+        .highlight { color: #f472b6; font-weight: 700; }
+
+        /* 3. LAYOUTS */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .image-wrapper {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            height: 400px;
+        }
+        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+        .tile-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+        }
+        .tile {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 40px;
+            border-radius: 24px;
+            transition: transform 0.3s ease;
+        }
+        .tile h3 { font-size: 28px; color: #38bdf8; margin-bottom: 15px; }
+        .tile i { font-size: 40px; color: #38bdf8; margin-bottom: 20px; display: block; }
+
+        /* Bleed Image Layout Adjustment */
+        .bleed-image-layout {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            padding: 0 !important;
+            align-items: start !important;
+        }
+        .bleed-image-layout .content-container { padding: 80px 60px; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+        .bleed-image-layout img { height: 720px !important; width: 100%; object-fit: cover; }
+
+        /* Custom Styles for Slide 3 Warning */
+        .warning-box {
+            background: rgba(244, 114, 182, 0.1);
+            border: 2px solid #f472b6;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        .warning-box strong { color: #f472b6; font-size: 24px; display: block; margin-bottom: 10px; }
+
+        .mantra {
+            font-family: 'Kanit';
+            font-size: 26px;
+            font-style: italic;
+            color: #38bdf8;
+            margin-top: 30px;
+            border-left: 4px solid #38bdf8;
+            padding-left: 20px;
+            line-height: 1.4;
+        }
+
+        /* Q&A Layout */
+        .qa-layout { text-align: center; }
+        .qa-layout h2 { font-size: 100px; color: #38bdf8; }
+    </style>
+</head>
+<body>
+
+<!-- Slide 1: Title Slide -->
+<div class="slide-container" id="slide1">
+    <h1>ENGINEERING THE<br><span style="color:#38bdf8">FUTURE MINDSET</span></h1>
+    <p class="subtitle">ปรับจูนทัศนคติวิศวกรยุคใหม่: ทำไม "ความกว้าง" และ "การเข้าถึงแก่น" ถึงเป็นอาวุธที่ AI เลียนแบบไม่ได้</p>
+</div>
+
+<!-- Slide 2: The Hook (Kasparov Centaur) -->
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">Beyond the Loss</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3 style="margin-bottom: 20px;">บทเรียนจากหมากรุก: <span class="keyword">"Centaur" Mindset</span></h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 20px;"><i class="fa-solid fa-chess-knight" style="color:#38bdf8; margin-right: 15px;"></i> Kasparov แพ้ AI... แต่เขาไม่ยอมจำนน</li>
+                    <li style="margin-bottom: 20px;"><i class="fa-solid fa-bolt" style="color:#38bdf8; margin-right: 15px;"></i> เขาใช้ <span class="keyword">Domain Knowledge</span> ที่เข้มข้น + <span class="keyword">AI Co-pilot</span></li>
+                    <li><i class="fa-solid fa-arrows-to-dot" style="color:#38bdf8; margin-right: 15px;"></i> <strong>Key Statement:</strong> ค่าตัวของคุณอยู่ที่ <span class="highlight">"การวางกลยุทธ์"</span> ไม่ใช่แค่ <span class="highlight">"การคำนวณ"</span></li>
+                </ul>
+            </div>
+            <div class="image-wrapper">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/17292361608270760867" alt="การร่วมมือกันระหว่างคนและ AI ในการเล่นหมากรุก">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 3: The Crux (Dopamine Warning) -->
+<div class="slide-container bleed-image-layout" id="slide3">
+    <div class="content-container">
+        <h2 class="slide-title" style="margin-bottom: 20px;">The Crux: เลิกไล่ล่า Dopamine</h2>
+        <p>ในการทำ Workshop วันนี้ ระวังกับดักที่อันตรายที่สุด:</p>
+        <div class="warning-box">
+            <strong>SHORT-TERM FINANCIAL DOPAMINE</strong>
+            <p style="font-size: 18px; margin-top: 5px;">อย่าทำ Product เพียงเพื่อจะเอาตัวเลขไปส่งอาจารย์ หรือแค่เอาใจกรรมการเพื่อรางวัลชั่วคราว</p>
+        </div>
+        <p style="margin-top: 25px;">โฟกัสที่ <span class="keyword">"The Crux"</span>: แก่นของปัญหาที่ถ้าแก้จุดนี้ได้ ปัญหาอื่นๆ จะคลี่คลายตามไปเอง</p>
+        <div class="mantra">
+            "ความสำเร็จมาจากการสร้าง Product ที่ดีและกลยุทธ์ที่คม ไม่ใช่การวิ่งตามตัวเลข"
+        </div>
+    </div>
+    <img src="http://googleusercontent.com/image_collection/image_retrieval/12707907443013793459" alt="ภาพเปรียบเทียบโครงสร้างวิศวกรรมกับระบบสมอง">
+</div>
+
+<!-- Slide 4: Range (OS vs Script) -->
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">เป็น OS อย่าเป็นแค่ Script</h2>
+    <div class="content-area">
+        <div class="tile-container">
+            <div class="tile">
+                <i class="fa-solid fa-code"></i>
+                <h3>Scripts = AI</h3>
+                <p>งานที่ทำเป็นเส้นตรงและเฉพาะทางเกินไป (Hyper-specialization) กำลังถูก AI แทนที่</p>
+            </div>
+            <div class="tile" style="border-color: #f472b6;">
+                <i class="fa-solid fa-microchip" style="color: #f472b6;"></i>
+                <h3 style="color: #f472b6;">Humans = OS</h3>
+                <p>ระบบปฏิบัติการทำหน้าที่จัดการ "ความซับซ้อน" เชื่อมต่อ Hardware เข้ากับ Software</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Connect the Dots</h3>
+                <p><span class="keyword">Range</span> คือการมีประสบการณ์ที่กว้าง เพื่อมองเห็นความเชื่อมโยงที่คนอื่นมองไม่เห็น</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: Entrepreneurial Pillars -->
+<div class="slide-container" id="slide5">
+    <h2 class="slide-title">3 เสาหลักที่ต้อง "แม่น"</h2>
+    <div class="content-area">
+        <div class="tile-container">
+            <div class="tile">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Finance</h3>
+                <p>ไม่ใช่แค่บัญชี แต่คือการบริหาร <span class="keyword">"Energy"</span> ของระบบ (Cashflow)</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-diagram-project"></i>
+                <h3>Business Model</h3>
+                <p>การวาง <span class="keyword">System Architecture</span> ของการสร้างรายได้และคุณค่า</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-gears"></i>
+                <h3>Operations</h3>
+                <p>การออกแบบ <span class="keyword">Algorithm</span> ของ Workflow เพื่อให้ธุรกิจหมุนได้ไม่มีสะดุด</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 6: Humanity & Stakeholders -->
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">ความเคารพคือแต้มต่อ</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="image-wrapper" style="border-radius: 50%; width: 400px; height: 400px; margin: 0 auto;">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/8591690878114885416" alt="การทำงานร่วมกันของทีมวิศวกร">
+            </div>
+            <div>
+                <h3>The Human Supply Chain</h3>
+                <p>ความสำเร็จระยะยาวขึ้นอยู่กับการมองแบบ <span class="keyword">Long-term</span> และการให้เกียรติคนรอบข้าง ตั้งแต่ Vendor จนถึง Partner</p>
+                <div class="mantra" style="border-color: #f472b6; color: #f472b6;">
+                    "ความมุ่งมั่นวัดกันที่ 'การกระทำ' ไม่ใช่ 'ประโยคสวยๆ บนสไลด์'"
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7: Q&A -->
+<div class="slide-container" id="slide7">
+    <div class="qa-layout">
+        <h2>?</h2>
+        <h3>มีคำถามไหมครับ?</h3>
+        <p class="subtitle" style="margin-top: 30px;">ได้เวลาออกไปหา "แก่น" (Crux) ของพวกคุณแล้ว</p>
+    </div>
+</div>
+
+</body>
+</html>
